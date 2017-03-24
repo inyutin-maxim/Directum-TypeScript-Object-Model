@@ -5,141 +5,172 @@ import {IComponent} from "./References/IComponent";
 import {TFieldDataType} from "./Enums/TFieldDataType";
 import {TJoinType} from "./Enums/TJoinType";
 import {TAddPosition} from "./Enums/TAddPosition";
+import {IView} from "./VisualView/IView";
+import {TDataSetState} from "./Enums/TDataSetState";
+import {IList} from "./AuxiliaryObjects/IList";
+import {IRuleList} from "./References/IRuleList";
+import {IObjectInfo} from "./BaseObjects/IObjectInfo";
+import {THyperlinkType} from "./Enums/THyperlinkType";
+import {ILock} from "./AuxiliaryObjects/ILock";
+import {IForm} from "./IForm";
+import {IFactory} from "./BaseObjects/IFactory";
+import {IEventList} from "./References/IEventList";
+import {IConnection} from "./Data/IConnection";
+import {TCompType} from "./Enums/TCompType";
+import {IArchiveInfo} from "./BaseObjects/IArchiveInfo";
+import {IApp} from "./IApp";
+import {IDataSetAccessInfo} from "./Data/IDataSetAccessInfo";
 export interface IObject {
     /**
-     *
+     * Свойство возвращает информацию о правах доступа текущего пользователя к набору данных.
      */
-    AccessInfo: string;
+    AccessInfo: IDataSetAccessInfo;
     /**
-     *
+     * Свойство возвращает признак открытости набора данных: True, если набор данных открыт, иначе False.
      */
-    Active: string;
+    Active: boolean;
     /**
-     *
+     * Свойство возвращает активную форму представления.
+     * Активной формой является та, на которой в данный момент находится фокус ввода.
      */
-    ActiveForm: string;
+    ActiveForm: IForm;
     /**
-     *
+     * Свойство возвращает приложение, в контексте которого создан объект.
      */
-    Application: string;
+    Application: IApp;
     /**
-     *
+     * Свойство возвращает информацию об архивном объекте.
+     */
+    ArchiveInfo: IArchiveInfo;
+    /**
+     * Свойство возвращает текст SQL-запроса набора данных.
      */
     CommandText: string;
     /**
-     *
+     * Свойство возвращает ИД компоненты, к которой относится объект.
      */
-    ComponentID: string;
+    ComponentID: number;
     /**
-     *
+     * Свойство возвращает тип объекта.
      */
-    ComponentType: string;
+    ComponentType: TCompType;
     /**
-     *
+     * Свойство возвращает соединение, через которое объект работает с SQL‑сервером.
      */
-    Connection: string;
+    Connection: IConnection;
     /**
-     *
+     * Свойство возвращает признак скопированной записи:
+     * True, если текущая запись набора данных является скопированной, иначе False.
      */
-    Copied: string;
+    Copied: boolean;
     /**
-     *
+     * Свойство возвращает список переменных окружения объекта.
      */
-    Environment: string;
+    Environment: IList;
     /**
-     *
+     * Свойство возвращает список событий набора данных.
      */
-    Events: string;
+    Events: IEventList;
     /**
-     *
+     * Свойство возвращает фабрику объекта.
      */
-    Factory: string;
+    Factory: IFactory;
     /**
-     *
+     * Свойство возвращает форму-карточку текущего представления объекта.
      */
-    Form: string;
+    Form: IForm;
     /**
-     *
+     * Свойство возвращает объект-блокировку типа ILock.
      */
-    GlobalLock: string;
+    GlobalLock: ILock;
     /**
+     * Свойство возвращает гиперссылку на объект в формате HyperlinkType.
      *
+     * @param hyperlinkType – тип гиперссылки. По умолчанию возвращается гиперссылка в текстовом формате.
+     *
+     * @desc https://club.directum.ru/webhelp/directum/5.2/index.html?om_svoistvo_hyperlink_giperssylka_na_obekt.htm
      */
-    Hyperlink: string;
+    Hyperlink(hyperlinkType?: THyperlinkType): string;
     /**
-     *
+     * Свойство возвращает ИД объекта. Свойство не поддерживается для объектов IScript и IReport.
      */
-    ID: string;
+    ID: number;
     /**
-     *
+     * Свойство возвращает информацию об объекте. Свойство не поддерживается для объектов IScript, IReport.
      */
-    Info: string;
+    Info: IObjectInfo;
     /**
-     *
+     * Свойство возвращает признак вставленной записи:
+     * True, если текущая запись набора данных является вновь вставленной, иначе False.
      */
-    Inserted: string;
+    Inserted: boolean;
     /**
-     *
+     * Свойство возвращает признак наличия несохраненных изменений в наборе данных:
+     * True, если изменения есть, иначе False.
+     * Свойство возвращает True после внесения изменений, до того момента, когда изменения будут сохранены или отменены.
      */
-    Modified: string;
+    Modified: boolean;
     /**
-     *
+     * Свойство возвращает имя объекта.
      */
     Name: string;
     /**
-     *
+     * Свойство возвращает список параметров объекта, используемых в текстах вычислений.
      */
-    Params: string;
+    Params: IList;
     /**
-     *
+     * Свойство предоставляет доступ к признаку необходимости сохранения предыдущих значений реквизитов:
+     * True, если необходимо сохранять предыдущие значения реквизитов, иначе False.
+     * Значение по умолчанию True.
      */
-    PreviousValuesStored: string;
+    PreviousValuesStored: boolean;
     /**
-     *
+     * Свойство возвращает список интегрированных отчетов объекта.
      */
-    Reports: string;
+    Reports: IList;
     /**
-     *
+     * Свойство возвращает количество реквизитов набора данных.
      */
-    RequisiteCount: string;
+    RequisiteCount: number;
     /**
-     *
+     * Свойство возвращает реквизит по его имени.
      */
-    Requisites: string;
+    Requisites(name: string): IRequisite;
     /**
-     *
+     * Свойство возвращает список значений реквизитов.
      */
-    RequisiteValues: string;
+    RequisiteValues: IList;
     /**
-     *
+     * Свойство возвращает список правил объекта. Элементы списка имеют тип IRule.
      */
-    Rules: string;
+    Rules: IRuleList;
     /**
-     *
+     * Свойство возвращает параметры запроса. Параметры можно добавить в текст запроса с помощью метода AddWhere.
      */
-    SQLParams: string;
+    SQLParams: IList;
     /**
-     *
+     * Свойство возвращает имя таблицы в базе данных, с которой связан набор данных объекта.
      */
     SQLTableName: string;
     /**
-     *
+     * Свойство возвращает состояние набора данных: редактирование, вставка, просмотр, закрыт.
      */
-    State: string;
+    State: TDataSetState;
     /**
-     *
+     * Свойство возвращает алиас, используемый в SQL-запросе, для таблицы, с которой связан набор данных объекта.
      */
     TableName: string;
     /**
-     *
+     * Свойство возвращает заголовок объекта.
      */
     Title: string;
     /**
-     *
+     * Свойство возвращает представление компоненты с именем, заданным в свойстве ViewName.
+     * Свойство не поддерживается для объектов IScript, IReport.
      */
-    View: string;
+    View: IView;
     /**
-     *
+     * Свойство предоставляет доступ к имени текущего представления.
      */
     ViewName: string;
 
