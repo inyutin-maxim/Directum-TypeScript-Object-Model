@@ -5,6 +5,7 @@ export enum TCompType{
         /**
          * Справочник
          */
+    //noinspection JSUnusedGlobalSymbols
     ctReference = 1,
         /**
          * сценарий

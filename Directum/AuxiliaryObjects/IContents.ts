@@ -1,4 +1,4 @@
-import {IObjectInfo} from "../Info/IObjectInfo";
+import {IObjectInfo} from "../BaseObjects/IObjectInfo";
 import {IForEach} from "./IForEach";
 /**
  * Объект IContents предназначен для работы со списком содержимого объекта, например, папки.

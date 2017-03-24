@@ -1,4 +1,4 @@
-import {IObjectInfo} from "../Info/IObjectInfo";
+import {IObjectInfo} from "./IObjectInfo";
 import {TUserObjectStatus} from "../Enums/TUserObjectStatus";
 import {TContentKind} from "../Enums/TContentKind";
 import {IUser} from "../AuxiliaryObjects/IUser";
@@ -32,7 +32,23 @@ export interface IEdmsObjectInfo extends IObjectInfo{
      */
     UserStatus: TUserObjectStatus;
 
-    AllContents();
-    ContentsByKind();
+    /**
+     * Метод возвращает содержимое объекта.
+     *
+     * @param useCache - признак использования локального кэша папок.
+     * @desc https://club.directum.ru/webhelp/directum/5.2/index.html?om_allcontents_vse_soderzhimoe.htm
+     */
+    AllContents(useCache: boolean);
+    /**
+     * Для папки метод возвращает содержимое папки типа Kind
+     *
+     * @param kind – тип содержимого объекта;
+     * @param useCache – признак использования локального кэша папок.
+     * @desc https://club.directum.ru/webhelp/directum/5.2/index.html?om_contentsbykind_coderzhimoe_po_tipu.htm
+     */
+    ContentsByKind(kind: TContentKind, useCache: boolean);
+    /**
+     * Метод обновляет информацию об объекте.
+     */
     Refresh();
 }
