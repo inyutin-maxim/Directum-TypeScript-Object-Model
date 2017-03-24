@@ -1,4 +1,5 @@
 import {IApp} from "./Directum/IApp";
+//noinspection JSUnusedGlobalSymbols
 export class DirectumJSHelper {
     /**
      * Проверка исполнения в WEB доступе.
@@ -9,6 +10,7 @@ export class DirectumJSHelper {
      */
     public App: IApp;
 
+    //noinspection JSUnusedGlobalSymbols
     constructor() {
         this.IsWebAccess = window.external['Folder'] == null;
         this.App = window.external['Folder']['Application'];
@@ -94,6 +96,7 @@ export class DirectumJSHelper {
             if (wizard != null) {
                 wizard.Execute();
             } else {
+                //noinspection ExceptionCaughtLocallyJS
                 throw 'Мастер действий с кодом "' + code + '"  не найден или у Вас нет на него прав.';
             }
         } catch (ex) {
@@ -116,6 +119,7 @@ export class DirectumJSHelper {
         }
     }
 
+    //noinspection JSMethodCanBeStatic
     /**
      * @summary Вывести ошибку.
      *
