@@ -1,4 +1,4 @@
-import {IApp} from "./Directum/IApp";
+import {IApplication} from "./Directum/IApplication";
 //noinspection JSUnusedGlobalSymbols
 export class DirectumJSHelper {
     /**
@@ -8,7 +8,7 @@ export class DirectumJSHelper {
     /**
      * Главный класс DIRECTUM.
      */
-    public App: IApp;
+    public App: IApplication;
 
     //noinspection JSUnusedGlobalSymbols
     constructor() {

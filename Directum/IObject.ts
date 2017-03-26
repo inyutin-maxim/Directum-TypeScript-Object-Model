@@ -18,7 +18,7 @@ import {IEventList} from "./References/IEventList";
 import {IConnection} from "./Data/IConnection";
 import {TCompType} from "./Enums/TCompType";
 import {IArchiveInfo} from "./BaseObjects/IArchiveInfo";
-import {IApp} from "./IApp";
+import {IApplication} from "./IApplication";
 import {IDataSetAccessInfo} from "./Data/IDataSetAccessInfo";
 export interface IObject {
     /**
@@ -37,7 +37,7 @@ export interface IObject {
     /**
      * Свойство возвращает приложение, в контексте которого создан объект.
      */
-    Application: IApp;
+    Application: IApplication;
     /**
      * Свойство возвращает информацию об архивном объекте.
      */
