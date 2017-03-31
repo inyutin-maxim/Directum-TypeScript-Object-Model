@@ -17,7 +17,7 @@ export interface IContents extends IForEach {
      * @param value информация об объектах, объединяемая с текущим содержимым IContents.
      * @desc https://club.directum.ru/webhelp/directum/5.2/index.html?om_metod_combine_obedinit_informciyu_ob_obektah.htm
      */
-    Combine(value: IObjectInfo | Array<IObjectInfo> | IContents);
+    Combine(value: IObjectInfo | Array<IObjectInfo> | IContents): IContents;
     /**
      * Сортировать содержимое
      * @param properties строка или массив строк с наименованиями свойств элементов содержимого, по которым будет осуществляться сортировка;
@@ -25,5 +25,5 @@ export interface IContents extends IForEach {
      *
      * @desc https://club.directum.ru/webhelp/directum/5.2/index.html?om_sort_sortirovka_soderzhimogo.htm
      */
-    Sort(properties: string | Array<string>, ascendingOrder: boolean | Array<boolean>);
+    Sort(properties: string | Array<string>, ascendingOrder: boolean | Array<boolean>): void;
 }
