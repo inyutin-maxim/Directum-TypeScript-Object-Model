@@ -18,9 +18,9 @@ export interface IArchiveInfo {
      * @param archiveTag признак архивирования. Если значение параметра больше 0, объект помещается в архив системы.
      * Если значение параметра меньше либо равно 0 – объект извлекается из архива.
      */
-    MoveToArchive(archiveTag: number);
+    MoveToArchive(archiveTag: number): void;
     /**
      * Метод извлекает объект из архива системы. Значение свойства ArchiveTag будет равно 0.
      */
-    RestoreFromArchive();
+    RestoreFromArchive(): void;
 }
