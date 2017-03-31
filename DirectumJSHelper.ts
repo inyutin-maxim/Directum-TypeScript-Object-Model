@@ -63,6 +63,7 @@ export class DirectumJSHelper {
         });
     }
 
+    //noinspection JSUnusedGlobalSymbols
     /**
      * @summary Открыть справочник
      *
@@ -83,6 +84,7 @@ export class DirectumJSHelper {
         }
     }
 
+    //noinspection JSUnusedGlobalSymbols
     /**
      * @summary Запустить мастер действий
      *
@@ -104,6 +106,7 @@ export class DirectumJSHelper {
         }
     }
 
+    //noinspection JSUnusedGlobalSymbols
     /**
      * @summary Открыть карточку записи справочника
      *
