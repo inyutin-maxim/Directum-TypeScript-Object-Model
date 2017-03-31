@@ -19,11 +19,11 @@ export interface IForEach{
      *
      * @desc https://club.directum.ru/webhelp/directum/5.2/index.html?om_metod_next_perejti_k_sledujuschemu_elementy_spiska.htm
      */
-    Next();
+    Next(): void;
     /**
      * Перейти к началу списка
      *
      * @desc https://club.directum.ru/webhelp/directum/5.2/index.html?om_metod_reset_perejti_k_nachalu_spiska.htm
      */
-    Reset();
+    Reset(): void;
 }

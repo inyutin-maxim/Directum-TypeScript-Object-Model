@@ -25,13 +25,13 @@ export interface IList extends IForEach{
     /**
      * Метод удаляет все элементы списка. При этом значение свойства Count становится равным нулю.
      */
-    Clear();
+    Clear(): void;
     /**
      * Метод удаляет элемент с указанным индексом.
      *
      * @param index индекс элемента
      */
-    Delete(index: number);
+    Delete(index: number): void;
     /**
      * Метод возвращает значение первого элемента в списке, имя которого совпадает с параметром Name.
      *
@@ -57,7 +57,7 @@ export interface IList extends IForEach{
      * @param name имя элемента;
      * @param value значение элемента.
      */
-    Insert(index: number, name: string, value: any);
+    Insert(index: number, name: string, value: any): void;
     /**
      * Метод возвращает значение элемента с именем Name и удаляет элемент из списка.
      *
@@ -70,7 +70,7 @@ export interface IList extends IForEach{
      * @param name имя элемента;
      * @param value значение элемента.
      */
-    SetVar(name: string, value: any);
+    SetVar(name: string, value: any): void;
     /**
      * Метод возвращает значение первого в списке элемента, имя которого совпадает со значением параметра Name.
      *

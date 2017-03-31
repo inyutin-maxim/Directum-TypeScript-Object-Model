@@ -50,5 +50,5 @@ export interface ILock {
     /**
      * Метод разблокирует объект системы.
      */
-    UnlockObject();
+    UnlockObject(): void;
 }
