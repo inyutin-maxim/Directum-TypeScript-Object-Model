@@ -34,5 +34,5 @@ export interface IContents extends IForEach {
      *
      * @desc https://club.directum.ru/webhelp/directum/5.2/index.html?om_sort_sortirovka_soderzhimogo.htm
      */
-    Sort(properties: string, ascendingOrder: Array<boolean>): void;
+    Sort(properties: Array<string>, ascendingOrder: Array<boolean>): void;
 }
