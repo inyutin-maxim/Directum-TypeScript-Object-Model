@@ -5,15 +5,15 @@ export interface IForEach{
     /**
      * Свойство возвращает количество элементов в списке.
      */
-    Count: number;
+    readonly Count: number;
     /**
      *Свойство возвращает признак конца списка.
      */
-    EOF: boolean;
+    readonly EOF: boolean;
     /**
      * Свойство возвращает значение текущего элемента списка.
      */
-    Value: any;
+    readonly Value: any;
     /**
      * Перейти к следующему элементу списка
      *

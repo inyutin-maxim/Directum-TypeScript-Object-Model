@@ -9,7 +9,7 @@ export interface IContents extends IForEach {
      * причем количество результатов превышает заданное в свойстве MaxRecordCount ограничение:
      * True, если содержимое объекта, получено поиском, превысившим ограничение, иначе False.
      */
-    IsResultExceedsMaxRecordCount: boolean;
+    readonly IsResultExceedsMaxRecordCount: boolean;
 
     /**
      * Объединить информацию об объектах
