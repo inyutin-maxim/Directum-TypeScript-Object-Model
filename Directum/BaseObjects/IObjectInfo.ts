@@ -7,27 +7,27 @@ export interface IObjectInfo{
     /**
      * Свойство возвращает имя компоненты, к которой относится объект.
      */
-    ComponentName: string;
+    readonly ComponentName: string;
     /**
      * Свойство возвращает заголовок компоненты, к которой относится объект.
      */
-    ComponentTitle: string;
+    readonly ComponentTitle: string;
     /**
      * Свойство возвращает тип объекта.
      */
-    ComponentType: TCompType;
+    readonly ComponentType: TCompType;
     /**
      * Свойство возвращает ИД объекта.
      */
-    ID: number;
+    readonly ID: number;
     /**
      * Свойство возвращает наименование объекта.
      */
-    Name: string;
+    readonly Name: string;
     /**
      * Свойство возвращает код системы, к которой относится объект.
      */
-    SystemCode: string;
+    readonly SystemCode: string;
     /**
      * Метод помещает в объект IContents текущий объект IObjectInfo и значение параметра Value.
      *
