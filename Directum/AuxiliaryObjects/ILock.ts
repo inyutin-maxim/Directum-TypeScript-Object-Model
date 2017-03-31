@@ -1,8 +1,6 @@
 import {TCompType} from "../Enums/TCompType";
 /**
  * Объект ILock предназначен для работы с блокировками.
- *
- * todo описать интерфейс
  */
 export interface ILock {
     /**

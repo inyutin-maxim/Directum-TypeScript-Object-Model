@@ -1,5 +1,5 @@
 import {TUserType} from "../Enums/TUserType";
-export interface IUser{
+export interface IUser {
     /**
      *
      */
