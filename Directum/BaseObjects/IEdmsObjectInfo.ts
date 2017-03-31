@@ -10,27 +10,27 @@ export interface IEdmsObjectInfo extends IObjectInfo{
     /**
      * Свойство возвращает автора объекта.
      */
-    Author: IUser;
+    readonly Author: IUser;
     /**
      * Свойство возвращает дату и время создания объекта.
      */
-    Created: Date;
+    readonly Created: Date;
     /**
      * Свойство возвращает тип объекта.
      */
-    Kind: TContentKind;
+    readonly Kind: TContentKind;
     /**
      * Свойство возвращает дату и время последней модификации объекта.
      */
-    Modified: Date;
+    readonly Modified: Date;
     /**
      * Свойство возвращает информацию о родительском объекте. Свойство является устаревшим, использовать его не рекомендуется.
      */
-    Parent: IEdmsObjectInfo;
+    readonly Parent: IEdmsObjectInfo;
     /**
      * Свойство возвращает пользовательский статус объекта.
      */
-    UserStatus: TUserObjectStatus;
+    readonly UserStatus: TUserObjectStatus;
 
     /**
      * Метод возвращает содержимое объекта.
