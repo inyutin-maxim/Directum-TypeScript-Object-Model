@@ -7,9 +7,9 @@ export interface IDeaObjectInfo extends IEdmsObjectInfo, IObjectInfo{
     /**
      * Свойство возвращает признак наличия полных прав на папку или документ у текущего пользователя: True, если есть полные права на объект, иначе False.
      */
-    UserCanManage: boolean;
+    readonly UserCanManage: boolean;
     /**
      * Свойство возвращает признак наличия прав на изменение папки или документа: True, если у текущего пользователя есть права на изменение объекта, иначе False.
      */
-    UserCanModify: boolean;
+    readonly UserCanModify: boolean;
 }
