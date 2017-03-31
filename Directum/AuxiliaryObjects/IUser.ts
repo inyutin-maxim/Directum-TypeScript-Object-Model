@@ -1,31 +1,35 @@
 import {TUserType} from "../Enums/TUserType";
+import {TAccountType} from "../Enums/TAccountType";
+/**
+ * Объект IUser предназначен для получения полной информации о пользователе, группе пользователей или роли.
+ */
 export interface IUser {
     /**
-     *
+     * Свойство возвращает тип учетной записи: пользователь, группа или роль.
      */
-    AccountType
+    readonly AccountType: TAccountType;
     /**
      * Свойство возвращает код записи из справочника Пользователи, Группы пользователей, Роли.
      */
-    Code: string;
+    readonly Code: string;
     /**
      * Свойство возвращает полное имя пользователя или группы.
      */
-    FullName: string;
+    readonly FullName: string;
     /**
      * Свойство возвращает ИД пользователя или группы.
      */
-    ID: number;
+    readonly ID: number;
     /**
      * Свойство возвращает признак того, что пользователь является пользователем удаленной системы.
      */
-    IsRemote: boolean;
+    readonly IsRemote: boolean;
     /**
-     *
+     * Свойство возвращает имя пользователя или группы.
      */
-    Name: string;
+    readonly Name: string;
     /**
      * Свойство возвращает статус пользователя.
      */
-    UserType:TUserType;
+    readonly UserType: TUserType;
 }
