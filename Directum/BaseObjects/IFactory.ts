@@ -1,4 +1,4 @@
-import {IObject} from "../IObject";
+import {IObject} from "./IObject";
 import {IApplication} from "../IApplication";
 import {TContentKind} from "../Enums/TContentKind";
 import {IObjectInfo} from "./IObjectInfo";
