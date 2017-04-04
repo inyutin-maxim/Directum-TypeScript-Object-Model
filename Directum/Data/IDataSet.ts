@@ -7,8 +7,6 @@ import {IRequisite} from "./IRequisite";
 import {TDataSetState} from "../Enums/TDataSetState";
 /**
  * Объект IDataSet предоставляет методы и свойства для работы с набором данных.
- *
- * todo Описать интерфейс
  */
 export interface IDataSet extends IQuery{
     /**
