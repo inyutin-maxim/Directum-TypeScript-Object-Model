@@ -1,6 +1,6 @@
-import {IList} from "./AuxiliaryObjects/IList";
-import {IWizardStep} from "./Wizards/IWizardStep";
-import {IObject} from "./BaseObjects/IObject";
+import {IList} from "../AuxiliaryObjects/IList";
+import {IWizardStep} from "./IWizardStep";
+import {IObject} from "../BaseObjects/IObject";
 /**
  * Объект IWizard предназначен для работы с мастерами действий.
  */
