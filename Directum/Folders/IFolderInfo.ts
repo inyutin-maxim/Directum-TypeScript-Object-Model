@@ -11,30 +11,30 @@ export interface IFolderInfo extends IObjectInfo, IDeaObjectInfo{
     /**
      * Свойство возвращает тип содержимого папки: задачи, задания, документы, варианты запуска компонент, папки.
      */
-    ContentKind: TContentKind;
+    readonly ContentKind: TContentKind;
     /**
      * Свойство возвращает папку.
      */
-    Folder: IFolder;
+    readonly Folder: IFolder;
     /**
      * Свойство возвращает тип папки.
      */
-    FolderType: TFolderType;
+    readonly FolderType: TFolderType;
     /**
      * Свойство возвращает признак наличия вложенных папок: True, если папка содержит другие папки, иначе False.
      */
-    HasChildren: boolean;
+    readonly HasChildren: boolean;
     /**
      * Свойство возвращает признак отображения только обложки папки.
      */
-    ShowCoverOnly: boolean;
+    readonly ShowCoverOnly: boolean;
     /**
      * Свойство возвращает признак отображения количества непрочитанных заданий в папке:
      * True, если для папки настроено отображение количества непрочитанных заданий, иначе False.
      */
-    ShowUnread: boolean;
+    readonly ShowUnread: boolean;
     /**
      * Свойство возвращает обложку папки.
      */
-    URL: string;
+    readonly URL: string;
 }

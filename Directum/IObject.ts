@@ -24,100 +24,93 @@ export interface IObject {
     /**
      * Свойство возвращает информацию о правах доступа текущего пользователя к набору данных.
      */
-    AccessInfo: IDataSetAccessInfo;
+    readonly AccessInfo: IDataSetAccessInfo;
     /**
      * Свойство возвращает признак открытости набора данных: True, если набор данных открыт, иначе False.
      */
-    Active: boolean;
+    readonly Active: boolean;
     /**
      * Свойство возвращает активную форму представления.
      * Активной формой является та, на которой в данный момент находится фокус ввода.
      */
-    ActiveForm: IForm;
+    readonly ActiveForm: IForm;
     /**
      * Свойство возвращает приложение, в контексте которого создан объект.
      */
-    Application: IApplication;
+    readonly Application: IApplication;
     /**
      * Свойство возвращает информацию об архивном объекте.
      */
-    ArchiveInfo: IArchiveInfo;
+    readonly ArchiveInfo: IArchiveInfo;
     /**
      * Свойство возвращает текст SQL-запроса набора данных.
      */
-    CommandText: string;
+    readonly CommandText: string;
     /**
      * Свойство возвращает ИД компоненты, к которой относится объект.
      */
-    ComponentID: number;
+    readonly ComponentID: number;
     /**
      * Свойство возвращает тип объекта.
      */
-    ComponentType: TCompType;
+    readonly ComponentType: TCompType;
     /**
      * Свойство возвращает соединение, через которое объект работает с SQL‑сервером.
      */
-    Connection: IConnection;
+    readonly Connection: IConnection;
     /**
      * Свойство возвращает признак скопированной записи:
      * True, если текущая запись набора данных является скопированной, иначе False.
      */
-    Copied: boolean;
+    readonly Copied: boolean;
     /**
      * Свойство возвращает список переменных окружения объекта.
      */
-    Environment: IList;
+    readonly Environment: IList;
     /**
      * Свойство возвращает список событий набора данных.
      */
-    Events: IEventList;
+    readonly Events: IEventList;
     /**
      * Свойство возвращает фабрику объекта.
      */
-    Factory: IFactory;
+    readonly Factory: IFactory;
     /**
      * Свойство возвращает форму-карточку текущего представления объекта.
      */
-    Form: IForm;
+    readonly Form: IForm;
     /**
      * Свойство возвращает объект-блокировку типа ILock.
      */
-    GlobalLock: ILock;
-    /**
-     * Свойство возвращает гиперссылку на объект в формате HyperlinkType.
-     *
-     * @param hyperlinkType – тип гиперссылки. По умолчанию возвращается гиперссылка в текстовом формате.
-     *
-     * @desc https://club.directum.ru/webhelp/directum/5.2/index.html?om_svoistvo_hyperlink_giperssylka_na_obekt.htm
-     */
-    Hyperlink(hyperlinkType?: THyperlinkType): string;
+    readonly GlobalLock: ILock;
+
     /**
      * Свойство возвращает ИД объекта. Свойство не поддерживается для объектов IScript и IReport.
      */
-    ID: number;
+    readonly ID: number;
     /**
      * Свойство возвращает информацию об объекте. Свойство не поддерживается для объектов IScript, IReport.
      */
-    Info: IObjectInfo;
+    readonly Info: IObjectInfo;
     /**
      * Свойство возвращает признак вставленной записи:
      * True, если текущая запись набора данных является вновь вставленной, иначе False.
      */
-    Inserted: boolean;
+    readonly Inserted: boolean;
     /**
      * Свойство возвращает признак наличия несохраненных изменений в наборе данных:
      * True, если изменения есть, иначе False.
      * Свойство возвращает True после внесения изменений, до того момента, когда изменения будут сохранены или отменены.
      */
-    Modified: boolean;
+    readonly Modified: boolean;
     /**
      * Свойство возвращает имя объекта.
      */
-    Name: string;
+    readonly Name: string;
     /**
      * Свойство возвращает список параметров объекта, используемых в текстах вычислений.
      */
-    Params: IList;
+    readonly Params: IList;
     /**
      * Свойство предоставляет доступ к признаку необходимости сохранения предыдущих значений реквизитов:
      * True, если необходимо сохранять предыдущие значения реквизитов, иначе False.
@@ -127,53 +120,61 @@ export interface IObject {
     /**
      * Свойство возвращает список интегрированных отчетов объекта.
      */
-    Reports: IList;
+    readonly Reports: IList;
     /**
      * Свойство возвращает количество реквизитов набора данных.
      */
-    RequisiteCount: number;
-    /**
-     * Свойство возвращает реквизит по его имени.
-     */
-    Requisites(name: string): IRequisite;
+    readonly RequisiteCount: number;
     /**
      * Свойство возвращает список значений реквизитов.
      */
-    RequisiteValues: IList;
+    readonly RequisiteValues: IList;
     /**
      * Свойство возвращает список правил объекта. Элементы списка имеют тип IRule.
      */
-    Rules: IRuleList;
+    readonly Rules: IRuleList;
     /**
      * Свойство возвращает параметры запроса. Параметры можно добавить в текст запроса с помощью метода AddWhere.
      */
-    SQLParams: IList;
+    readonly SQLParams: IList;
     /**
      * Свойство возвращает имя таблицы в базе данных, с которой связан набор данных объекта.
      */
-    SQLTableName: string;
+    readonly SQLTableName: string;
     /**
      * Свойство возвращает состояние набора данных: редактирование, вставка, просмотр, закрыт.
      */
-    State: TDataSetState;
+    readonly State: TDataSetState;
     /**
      * Свойство возвращает алиас, используемый в SQL-запросе, для таблицы, с которой связан набор данных объекта.
      */
-    TableName: string;
+    readonly TableName: string;
     /**
      * Свойство возвращает заголовок объекта.
      */
-    Title: string;
+    readonly Title: string;
     /**
      * Свойство возвращает представление компоненты с именем, заданным в свойстве ViewName.
      * Свойство не поддерживается для объектов IScript, IReport.
      */
-    View: IView;
+    readonly View: IView;
     /**
      * Свойство предоставляет доступ к имени текущего представления.
      */
     ViewName: string;
 
+    /**
+     * Свойство возвращает реквизит по его имени.
+     */
+    Requisites(name: string): IRequisite;
+    /**
+     * Свойство возвращает гиперссылку на объект в формате HyperlinkType.
+     *
+     * @param hyperlinkType – тип гиперссылки. По умолчанию возвращается гиперссылка в текстовом формате.
+     *
+     * @desc https://club.directum.ru/webhelp/directum/5.2/index.html?om_svoistvo_hyperlink_giperssylka_na_obekt.htm
+     */
+    Hyperlink(hyperlinkType?: THyperlinkType): string;
     /**
      * Метод добавляет таблицы в раздел from SQL-запроса набора данных.
      *
