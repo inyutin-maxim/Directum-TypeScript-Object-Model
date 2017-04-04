@@ -1,7 +1,7 @@
 import {IObjectInfo} from "../BaseObjects/IObjectInfo";
 import {IDeaObjectInfo} from "../BaseObjects/IDeaObjectInfo";
 import {TFolderType} from "../Enums/TFolderType";
-import {IFolder} from "../IFolder";
+import {IFolder} from "./IFolder";
 import {TContentKind} from "../Enums/TContentKind";
 //noinspection JSUnusedGlobalSymbols
 /**
