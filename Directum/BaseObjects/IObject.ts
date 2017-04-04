@@ -12,7 +12,7 @@ import {IRuleList} from "../References/IRuleList";
 import {IObjectInfo} from "./IObjectInfo";
 import {THyperlinkType} from "../Enums/THyperlinkType";
 import {ILock} from "../AuxiliaryObjects/ILock";
-import {IForm} from "../IForm";
+import {IForm} from "../VisualView/IForm";
 import {IFactory} from "./IFactory";
 import {IEventList} from "../References/IEventList";
 import {IConnection} from "../Data/IConnection";

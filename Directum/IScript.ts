@@ -1,5 +1,10 @@
-import {IScriptParams} from "./IScriptParams";
-export interface IScript{
-    Params: IScriptParams;
+import {IObject} from "./BaseObjects/IObject";
+/**
+ * Объект IScript содержит методы и свойства для работы с компонентами типа «Сценарий».
+ */
+export interface IScript extends IObject {
+    /**
+     * Метод выполняет сценарий.
+     */
     Execute();
 }

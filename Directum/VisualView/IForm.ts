@@ -1,8 +1,8 @@
-import {IFormTitle} from "./VisualView/IFormTitle";
-import {TCloseOnEsc} from "./Enums/TCloseOnEsc";
-import {IControlList} from "./VisualView/IControlList";
-import {IActionList} from "./VisualView/IActionList";
-import {IControl} from "./VisualView/IControl";
+import {IFormTitle} from "./IFormTitle";
+import {TCloseOnEsc} from "../Enums/TCloseOnEsc";
+import {IControlList} from "./IControlList";
+import {IActionList} from "./IActionList";
+import {IControl} from "./IControl";
 /**
  * Объект IForm содержит методы и свойства для отображения и управления отдельными формами представления.
  */

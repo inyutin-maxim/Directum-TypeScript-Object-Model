@@ -1,4 +1,4 @@
-import {IForm} from "../IForm";
+import {IForm} from "../VisualView/IForm";
 /**
  * Компонента наследуется от IObject.
  *
