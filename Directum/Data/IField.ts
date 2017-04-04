@@ -23,23 +23,23 @@ export interface IField{
     /**
      * Свойство возвращает тип данных поля.
      */
-    DataType:TFieldDataType;
+    readonly DataType: TFieldDataType;
     /**
      * Свойство возвращает признак пустого значения поля: True, если значение поля пустое, иначе False.
      */
-    IsNull:boolean;
+    readonly IsNull: boolean;
     /**
      * Свойство возвращает алиас поля, используемый в SQL-запросе.
      */
-    Name:string;
+    readonly Name: string;
     /**
      * Свойство возвращает SQL-запрос, к которому относится поле.
      */
-    Query:IQuery;
+    readonly Query: IQuery;
     /**
      * Свойство возвращает имя поля в таблице базы данных.
      */
-    SQLFieldName:string;
+    readonly SQLFieldName: string;
     /**
      * Свойство предоставляет доступ к значению поля.
      */
@@ -52,7 +52,7 @@ export interface IField{
      *
      * @desc https://club.directum.ru/webhelp/directum/5.2/index.html?om_loadfromfile_zagruzit_iz_fajla_ifield.htm
      */
-    LoadFromFile(fileName: string);
+    LoadFromFile(fileName: string): void;
     /**
      * Метод сохраняет значение поля в файл с именем FileName.
      *
@@ -60,5 +60,5 @@ export interface IField{
      *
      * @desc https://club.directum.ru/webhelp/directum/5.2/index.html?om_savetofile_sohranit_v_fajl_ifield.htm
      */
-    SaveToFile(fileName: string);
+    SaveToFile(fileName: string): void;
 }
