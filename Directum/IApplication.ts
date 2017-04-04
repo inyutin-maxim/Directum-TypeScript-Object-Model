@@ -3,6 +3,8 @@ import {IWizardFactory} from "./Wizards/IWizardFactory";
 import {IReferencesFactory} from "./References/IReferencesFactory";
 import {ILicenseInfo} from "./AuxiliaryObjects/ILicenseInfo";
 import {IConnection} from "./Data/IConnection";
+import {ILocalization} from "./AuxiliaryObjects/ILocalization";
+import {IDICSFactory} from "./DICS/IDICSFactory";
 /**
  * Объект IApplication предназначен для доступа к объектам системы DIRECTUM.
  */
@@ -17,7 +19,10 @@ export interface IApplication {
      */
     DepartmentContext: string;
     DialogsFactory
-    DICSFactory
+    /**
+     * Свойство предоставляет доступ к фабрике DICS.
+     */
+    DICSFactory: IDICSFactory;
     EDocumentFactory
     FolderFactory
     JobFactory
@@ -25,7 +30,7 @@ export interface IApplication {
      * Свойство предоставляет интерфейс с информацией о лицензиях.
      */
     LicenseInfo: ILicenseInfo;
-    Localization
+    Localization: ILocalization;
     MessagingFactory
     /**
      * Свойство устанавливает контекст организации.
