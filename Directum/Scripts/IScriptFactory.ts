@@ -1,4 +1,4 @@
-import {IScript} from "../IScript";
+import {IScript} from "./IScript";
 import {IFactory} from "../BaseObjects/IFactory";
 /**
  * Объект IScriptFactory предназначен для работы со сценариями.

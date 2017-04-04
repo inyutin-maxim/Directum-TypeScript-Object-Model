@@ -1,4 +1,4 @@
-import {IWizard} from "../Wizards/IWizard";
+import {IWizard} from "./IWizard";
 /**
  * Объект IWizardFactory предназначен для доступа к мастерам действий.
  */

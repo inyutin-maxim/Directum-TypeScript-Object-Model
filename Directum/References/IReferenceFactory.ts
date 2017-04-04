@@ -1,11 +1,12 @@
-import {IReference} from "../IReference";
+import {IReference} from "./IReference";
 import {IObjectInfo} from "../BaseObjects/IObjectInfo";
 import {IStringList} from "../AuxiliaryObjects/IStringList";
-import {IComponent} from "../References/IComponent";
+import {IComponent} from "./IComponent";
+import {IFactory} from "../BaseObjects/IFactory";
 /**
  * Объект IReferenceFactory предназначен для работы с записями справочника.
  */
-export interface IReferenceFactory {
+export interface IReferenceFactory extends IFactory {
     /**
      * ИД типа справочника.
      */

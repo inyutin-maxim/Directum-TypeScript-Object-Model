@@ -1,6 +1,6 @@
-import {IScriptFactory} from "./Factories/IScriptFactory";
-import {IWizardFactory} from "./Factories/IWizardFactory";
-import {IReferencesFactory} from "./Factories/IReferencesFactory";
+import {IScriptFactory} from "./Scripts/IScriptFactory";
+import {IWizardFactory} from "./Wizards/IWizardFactory";
+import {IReferencesFactory} from "./References/IReferencesFactory";
 import {ILicenseInfo} from "./AuxiliaryObjects/ILicenseInfo";
 import {IConnection} from "./Data/IConnection";
 /**

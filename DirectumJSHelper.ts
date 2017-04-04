@@ -43,6 +43,7 @@ export class DirectumJSHelper {
         }
     }
 
+    //noinspection JSUnusedGlobalSymbols
     /**
      * @summary Выполнить компонент DIRECTUM в новом окне.
      *
@@ -74,11 +75,9 @@ export class DirectumJSHelper {
         try {
             // Получить IReference
             let ref = this.App.ReferencesFactory.ReferenceFactory(name).GetComponent();
-            viewName = viewName || 'Главное';
-            // Задать нужно представление
-            let view = ref.CreateView(viewName);
+            ref.ViewName = viewName || 'Главное';
             // Показать форму-список справочника
-            view.MainForm.ShowNoModal();
+            ref.Form.ShowNoModal();
         } catch (ex) {
             this.ShowError(ex);
         }
