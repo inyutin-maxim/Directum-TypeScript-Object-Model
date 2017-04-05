@@ -5,6 +5,7 @@ import {ILicenseInfo} from "./AuxiliaryObjects/ILicenseInfo";
 import {IConnection} from "./Data/IConnection";
 import {ILocalization} from "./AuxiliaryObjects/ILocalization";
 import {IDICSFactory} from "./DICS/IDICSFactory";
+import {IDialogsFactory} from "./Dialogs/IDialogsFactory";
 /**
  * Объект IApplication предназначен для доступа к объектам системы DIRECTUM.
  */
@@ -18,7 +19,10 @@ export interface IApplication {
      * Свойство предоставляет доступ к контексту модуля.
      */
     DepartmentContext: string;
-    DialogsFactory
+    /**
+     * Свойство предоставляет доступ к фабрике диалогов.
+     */
+    DialogsFactory: IDialogsFactory;
     /**
      * Свойство предоставляет доступ к фабрике DICS.
      */
