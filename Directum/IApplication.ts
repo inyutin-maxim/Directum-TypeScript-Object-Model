@@ -27,6 +27,9 @@ export interface IApplication {
      * Свойство предоставляет доступ к фабрике DICS.
      */
     DICSFactory: IDICSFactory;
+    /**
+     * Свойство предоставляет доступ к фабрике документов.
+     */
     EDocumentFactory
     FolderFactory
     JobFactory
