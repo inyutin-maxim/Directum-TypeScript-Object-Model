@@ -12,8 +12,10 @@ export class DirectumJSHelper {
 
     //noinspection JSUnusedGlobalSymbols
     constructor() {
-        this.IsWebAccess = window.external['Folder'] == null;
-        this.App = window.external['Folder']['Application'];
+        this.IsWebAccess = Object.keys(window.external).filter(item => item == 'Folder').length === 0;
+        if (this.IsWebAccess) {
+            this.App = window.external['Folder']['Application'];
+        }
     }
 
     /**
@@ -26,18 +28,20 @@ export class DirectumJSHelper {
      */
     public ScriptExecute(name: string, params: Object) {
         try {
-            // Получить IScript по имени
-            let script = this.App.ScriptFactory.GetObjectByName(name);
+            if (this.IsWebAccess) {
+                // Получить IScript по имени
+                let script = this.App.ScriptFactory.GetObjectByName(name);
 
-            // Получить параметры сценария
-            let scriptParams = script.Params;
-            // Добавить параметры сценария
-            for (let param in params) {
-                scriptParams.Add(param, params[param] || '');
+                // Получить параметры сценария
+                let scriptParams = script.Params;
+                // Добавить параметры сценария
+                for (let param in params) {
+                    scriptParams.Add(param, params[param] || '');
+                }
+
+                // Запустить сценарий
+                return script.Execute()
             }
-
-            // Запустить сценарий
-            return script.Execute()
         } catch (ex) {
             this.ShowError(ex);
         }
@@ -54,14 +58,16 @@ export class DirectumJSHelper {
      *
      * @returns {string} результат исполнения компоненты.
      */
-    ComponentExecuteInNewProcess(type: string, name: string, params: string, unit: string) {
-        // Выполнить компонент DIRECTUM в новом окне.
-        return this.ScriptExecute('ComponentExecuteInNewProcess', {
-            'ComponentType': type,
-            'ComponentName': name,
-            'Params': params,
-            'Unit': unit
-        });
+    public ComponentExecuteInNewProcess(type: string, name: string, params: string, unit: string) {
+        if (this.IsWebAccess) {
+            // Выполнить компонент DIRECTUM в новом окне.
+            return this.ScriptExecute('ComponentExecuteInNewProcess', {
+                'ComponentType': type,
+                'ComponentName': name,
+                'Params': params,
+                'Unit': unit
+            });
+        }
     }
 
     //noinspection JSUnusedGlobalSymbols
@@ -71,13 +77,15 @@ export class DirectumJSHelper {
      * @param {string} name Наименование справочника
      * @param {string} viewName Наименование представления
      */
-    ReferenceOpen(name: string, viewName: string) {
+    public ReferenceOpen(name: string, viewName?: string) {
         try {
-            // Получить IReference
-            let ref = this.App.ReferencesFactory.ReferenceFactory(name).GetComponent();
-            ref.ViewName = viewName || 'Главное';
-            // Показать форму-список справочника
-            ref.Form.ShowNoModal();
+            if (this.IsWebAccess) {
+                // Получить IReference
+                let ref = this.App.ReferencesFactory.ReferenceFactory(name).GetComponent();
+                ref.ViewName = viewName || 'Главное';
+                // Показать форму-список справочника
+                ref.ComponentForm.ShowNoModal();
+            }
         } catch (ex) {
             this.ShowError(ex);
         }
@@ -89,16 +97,18 @@ export class DirectumJSHelper {
      *
      * @param {string} code Код мастера действий
      */
-    WizardExecute(code: string) {
+    public WizardExecute(code: string) {
         try {
-            // Получить IWizard по коду
-            let wizard = this.App.WizardFactory.GetObjectByCode(code);
-            // Если мастер действий не найден, то сообщить пользователю
-            if (wizard != null) {
-                wizard.Execute();
-            } else {
-                //noinspection ExceptionCaughtLocallyJS
-                throw 'Мастер действий с кодом "' + code + '"  не найден или у Вас нет на него прав.';
+            if (this.IsWebAccess) {
+                // Получить IWizard по коду
+                let wizard = this.App.WizardFactory.GetObjectByCode(code);
+                // Если мастер действий не найден, то сообщить пользователю
+                if (wizard != null) {
+                    wizard.Execute();
+                } else {
+                    //noinspection ExceptionCaughtLocallyJS
+                    throw 'Мастер действий с кодом "' + code + '"  не найден или у Вас нет на него прав.';
+                }
             }
         } catch (ex) {
             this.ShowError(ex);
@@ -112,10 +122,12 @@ export class DirectumJSHelper {
      * @param {string} referenceName Код справочника
      * @param {int} id Идентификатор записи справочника
      */
-    OpenCard(referenceName: string, id: number) {
+    public OpenCard(referenceName: string, id: number) {
         try {
-            let ref = this.App.ReferencesFactory.ReferenceFactory(referenceName).GetObjectByID(id);
-            ref.Form.Show();
+            if (this.IsWebAccess) {
+                let ref = this.App.ReferencesFactory.ReferenceFactory(referenceName).GetObjectByID(id);
+                ref.Form.Show();
+            }
         } catch (err) {
             this.ShowError(err);
         }
