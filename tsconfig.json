@@ -11,7 +11,8 @@
     "noEmitOnError": true,
     "strictNullChecks": true,
     "target": "es5",
-    "sourceMap": true
+    "sourceMap": true,
+    "outDir": "Cover/js/"
   },
   "compileOnSave": true,
   "exclude": [
