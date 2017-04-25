@@ -11,15 +11,15 @@
     "noEmitOnError": true,
     "strictNullChecks": true,
     "target": "es5",
-    "sourceMap": true,
-    "outFile": "Cover/js/tsc.js",
-    "outDir": "Cover/js/"
+    "outDir": "Cover/js",
+    "inlineSourceMap": true,
+    "rootDirs": [
+      "src"
+    ],
+    "watch": true
   },
-  "include": [
-    "Directum/**/*"
-  ],
-  "compileOnSave": true,
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "Directum"
   ]
 }

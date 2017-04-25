@@ -1,0 +1,13 @@
+{
+  "name": "Directum-TypeScript-Object-Model",
+  "version": "0.0.1",
+  "author": "Инютин Максим Николаевич",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^6.0.45",
+    "typescript": "^2.2.2"
+  },
+  "scripts": {
+    "compile": "tsc"
+  }
+}
