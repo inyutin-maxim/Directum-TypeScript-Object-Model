@@ -1,4 +1,4 @@
-import {IApplication} from "./Directum/IApplication";
+import {IApplication} from "../Directum/IApplication";
 //noinspection JSUnusedGlobalSymbols
 export class DirectumJSHelper {
     /**
@@ -12,7 +12,7 @@ export class DirectumJSHelper {
 
     //noinspection JSUnusedGlobalSymbols
     constructor() {
-        this.IsWebAccess = Object.keys(window.external).filter(item => item == 'Folder').length === 0;
+        this.IsWebAccess = window.external === null;
         if (this.IsWebAccess) {
             this.App = window.external['Folder']['Application'];
         }

@@ -12,8 +12,12 @@
     "strictNullChecks": true,
     "target": "es5",
     "sourceMap": true,
+    "outFile": "Cover/js/tsc.js",
     "outDir": "Cover/js/"
   },
+  "include": [
+    "Directum/**/*"
+  ],
   "compileOnSave": true,
   "exclude": [
     "node_modules"
