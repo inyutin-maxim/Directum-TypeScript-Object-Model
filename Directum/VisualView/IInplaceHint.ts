@@ -1,5 +1,5 @@
 import {IControl} from "./IControl";
-import {TInplaceHintKind} from "../Data/TInplaceHintKind";
+import {TInplaceHintKind} from "../Enums/TInplaceHintKind";
 /**
  * Управляющий элемент IInplaceHint предназначен для отображения встроенных подсказок на форме.
  */

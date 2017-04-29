@@ -89,8 +89,33 @@ export interface IEDocumentFactory extends IFactory, IEdmsObjectFactory {
      * По умолчанию используется вид копируемого документа
      */
     Copy(aEDocumentVersion: IEDocumentVersion, eDocumentTypeCode?: string, eDocumentKindCode?: string): IEDocument;
-    CreateNewFromFile(): void;
-    CreateNewFromScannedFile(): void;
+    /**
+     * Метод создает новый документ из указанного файла, но не сохраняет его в базе данных.
+     *
+     * @param eDocumentTypeCode имя типа документа.
+     * В качестве значения параметра следует передавать имя записи из справочника Типы карточек документов;
+     * @param eDocumentKindCode код вида документа.
+     * В качестве значения параметра следует передавать код записи из справочника Виды документов;
+     * @param eDocumentEditorCode код приложения редактора.
+     * В качестве значения параметра следует передавать код записи из справочника Приложения-редакторы;
+     * @param aSourceFileName полное имя файла, на основе которого создается документ;
+     * @param InExtendedFormat признак создания документа из файла структурированного документа:
+     * True, если нужно создать документ из файла структурированного документа, иначе False.
+     * По умолчанию параметр принимает значение False.
+     */
+    CreateNewFromFile(eDocumentTypeCode: string, eDocumentKindCode: string, eDocumentEditorCode: string, aSourceFileName: string, InExtendedFormat?: boolean): IEDocument;
+    /**
+     * Метод создает новый документ из указанного файла, полученного путем сканирования, но не сохраняет его в базе данных.
+     *
+     * @param eDocumentTypeCode имя типа документа.
+     * В качестве значения параметра следует передавать имя записи из справочника Типы карточек документов;
+     * @param eDocumentKindCode код вида документа.
+     * В качестве значения параметра следует передавать код записи из справочника Виды документов;
+     * @param eDocumentEditorCode код приложения редактора.
+     * В качестве значения параметра следует передавать код записи из справочника Приложения-редакторы;
+     * @param scannedFileName полное имя файла сканированного изображения, на основе которого создается документ.
+     */
+    CreateNewFromScannedFile(eDocumentTypeCode: string, eDocumentKindCode: string, eDocumentEditorCode: string, scannedFileName: string): IEDocument;
     CreateNewFromTemplate(): void;
     CreateNewFromTemplateComponent(): void;
     ExistsDocumentInStorage(): void;

@@ -6,15 +6,20 @@ import {IConnection} from "./Data/IConnection";
 import {ILocalization} from "./AuxiliaryObjects/ILocalization";
 import {IDICSFactory} from "./DICS/IDICSFactory";
 import {IDialogsFactory} from "./Dialogs/IDialogsFactory";
+import {IComponentTokenFactory} from "./ComponentToken/IComponentTokenFactory";
+import {IEDocumentFactory} from "./Documents/IEDocumentFactory";
 /**
  * Объект IApplication предназначен для доступа к объектам системы DIRECTUM.
  */
 export interface IApplication {
-    ComponentTokenFactory
+    /**
+     * Свойство предоставляет доступ к фабрике вариантов запуска компонент.
+     */
+    readonly ComponentTokenFactory: IComponentTokenFactory;
     /**
      * Свойство возвращает объект-соединение, посредством которого приложение связано с SQL-сервером.
      */
-    Connection: IConnection;
+    readonly Connection: IConnection;
     /**
      * Свойство предоставляет доступ к контексту модуля.
      */
@@ -22,15 +27,15 @@ export interface IApplication {
     /**
      * Свойство предоставляет доступ к фабрике диалогов.
      */
-    DialogsFactory: IDialogsFactory;
+    readonly DialogsFactory: IDialogsFactory;
     /**
      * Свойство предоставляет доступ к фабрике DICS.
      */
-    DICSFactory: IDICSFactory;
+    readonly DICSFactory: IDICSFactory;
     /**
      * Свойство предоставляет доступ к фабрике документов.
      */
-    EDocumentFactory
+    readonly EDocumentFactory: IEDocumentFactory;
     FolderFactory
     JobFactory
     /**
