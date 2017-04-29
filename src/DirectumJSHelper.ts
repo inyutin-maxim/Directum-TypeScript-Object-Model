@@ -2,9 +2,9 @@ import {IApplication} from "../Directum/IApplication";
 //noinspection JSUnusedGlobalSymbols
 export class DirectumJSHelper {
     /**
-     * Проверка исполнения в WEB доступе.
+     * Проверка исполнения в Windows клиенте.
      */
-    public IsWebAccess: boolean;
+    public IsWindowsClient: boolean;
     /**
      * Главный класс DIRECTUM.
      */
@@ -12,8 +12,8 @@ export class DirectumJSHelper {
 
     //noinspection JSUnusedGlobalSymbols
     constructor() {
-        this.IsWebAccess = window.external === null;
-        if (this.IsWebAccess) {
+        this.IsWindowsClient = window.external === null;
+        if (this.IsWindowsClient) {
             this.App = window.external['Folder']['Application'];
         }
     }
@@ -28,7 +28,7 @@ export class DirectumJSHelper {
      */
     public ScriptExecute(name: string, params: Object) {
         try {
-            if (this.IsWebAccess) {
+            if (this.IsWindowsClient) {
                 // Получить IScript по имени
                 let script = this.App.ScriptFactory.GetObjectByName(name);
 
@@ -59,7 +59,7 @@ export class DirectumJSHelper {
      * @returns {string} результат исполнения компоненты.
      */
     public ComponentExecuteInNewProcess(type: string, name: string, params: string, unit: string) {
-        if (this.IsWebAccess) {
+        if (this.IsWindowsClient) {
             // Выполнить компонент DIRECTUM в новом окне.
             return this.ScriptExecute('ComponentExecuteInNewProcess', {
                 'ComponentType': type,
@@ -79,7 +79,7 @@ export class DirectumJSHelper {
      */
     public ReferenceOpen(name: string, viewName?: string) {
         try {
-            if (this.IsWebAccess) {
+            if (this.IsWindowsClient) {
                 // Получить IReference
                 let ref = this.App.ReferencesFactory.ReferenceFactory(name).GetComponent();
                 ref.ViewName = viewName || 'Главное';
@@ -99,7 +99,7 @@ export class DirectumJSHelper {
      */
     public WizardExecute(code: string) {
         try {
-            if (this.IsWebAccess) {
+            if (this.IsWindowsClient) {
                 // Получить IWizard по коду
                 let wizard = this.App.WizardFactory.GetObjectByCode(code);
                 // Если мастер действий не найден, то сообщить пользователю
@@ -124,7 +124,7 @@ export class DirectumJSHelper {
      */
     public OpenCard(referenceName: string, id: number) {
         try {
-            if (this.IsWebAccess) {
+            if (this.IsWindowsClient) {
                 let ref = this.App.ReferencesFactory.ReferenceFactory(referenceName).GetObjectByID(id);
                 ref.Form.Show();
             }

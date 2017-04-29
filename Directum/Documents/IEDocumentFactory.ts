@@ -116,10 +116,53 @@ export interface IEDocumentFactory extends IFactory, IEdmsObjectFactory {
      * @param scannedFileName полное имя файла сканированного изображения, на основе которого создается документ.
      */
     CreateNewFromScannedFile(eDocumentTypeCode: string, eDocumentKindCode: string, eDocumentEditorCode: string, scannedFileName: string): IEDocument;
-    CreateNewFromTemplate(): void;
-    CreateNewFromTemplateComponent(): void;
-    ExistsDocumentInStorage(): void;
-    OpenByID(): void;
-    GetStorageByID(): void;
-    GetStorageByName(): void;
+    /**
+     * Метод создает новый документ из шаблона, но не сохраняет его в базе данных.
+     *
+     * @param eDocumentTypeCode имя типа документа.
+     * В качестве значения параметра следует передавать имя записи из справочника Типы карточек документов;
+     * @param eDocumentKindCode код вида документа.
+     * В качестве значения параметра следует передавать код записи из справочника Виды документов;
+     * @param eDocumentTemplateCode код шаблона документа.
+     * В качестве значения параметра следует передавать код записи из справочника Шаблоны документов.
+     */
+    CreateNewFromTemplate(eDocumentTypeCode: string, eDocumentKindCode: string, eDocumentTemplateCode: string): IEDocument;
+    /**
+     * Метод создает новый документ из шаблона, но не сохраняет его в базе данных.
+     *
+     * @param template шаблон документа. Шаблон документа – это документ, который имеет вид «Шаблоны документов»
+     * @param eDocumentTypeCode имя типа документа.
+     * В качестве значения параметра следует передавать имя записи из справочника Типы карточек документов;
+     * @param eDocumentKindCode код вида документа.
+     * В качестве значения параметра следует передавать код записи из справочника Виды документов;
+     */
+    CreateNewFromTemplateComponent(template: IEDocument, eDocumentTypeCode: string, eDocumentKindCode: string): IEDocument;
+    /**
+     * Проверяет наличие документа в хранилище.
+     *
+     * @param eDocumentInfo информация об документе;
+     * @param versionNumber номер версии документа.
+     */
+    ExistsDocumentInStorage(eDocumentInfo: IEDocumentInfo, versionNumber: number): boolean;
+    /**
+     * Метод открывает версию номер VersionNumber документа с идентификатором ID.
+     *
+     * @param id ИД документа;
+     * @param openForWrite признак открытия документа для редактирования
+     * @param versionNumber номер версии документа. По умолчанию параметр равен 1.
+     * @constructor
+     */
+    OpenByID(id: number, openForWrite: boolean, versionNumber?: number): void;
+    /**
+     * Метод возвращает хранилище документов.
+     *
+     * @param storageID ИД хранилища
+     */
+    GetStorageByID(storageID: number): IEDocumentStorage;
+    /**
+     * Метод возвращает хранилище документов.
+     *
+     * @param storageName код хранилища.
+     */
+    GetStorageByName(storageName: string): IEDocumentStorage;
 }
