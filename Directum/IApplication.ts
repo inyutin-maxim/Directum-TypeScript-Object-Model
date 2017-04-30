@@ -11,6 +11,7 @@ import {IEDocumentFactory} from "./Documents/IEDocumentFactory";
 import {IFolderFactory} from "./Folders/IFolderFactory";
 import {IJobFactory} from "./Tasks/IJobFactory";
 import {IMessagingFactory} from "./InstantMessaging/IMessagingFactory";
+import {IReportFactory} from "./Reports/IReportFactory";
 /**
  * Объект IApplication предназначен для доступа к объектам системы DIRECTUM.
  */
@@ -66,8 +67,11 @@ export interface IApplication {
     /**
      * Свойство предоставляет доступ к фабрике типов справочников.
      */
-    ReferencesFactory: IReferencesFactory;
-    ReportFactory
+    readonly ReferencesFactory: IReferencesFactory;
+    /**
+     * Свойство предоставляет доступ к фабрике отчетов.
+     */
+    readonly ReportFactory: IReportFactory;
     /**
      * Свойство предоставляет доступ к ИД процесса COM-сервера.
      */
