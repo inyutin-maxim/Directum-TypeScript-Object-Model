@@ -9,6 +9,8 @@ import {IDialogsFactory} from "./Dialogs/IDialogsFactory";
 import {IComponentTokenFactory} from "./ComponentToken/IComponentTokenFactory";
 import {IEDocumentFactory} from "./Documents/IEDocumentFactory";
 import {IFolderFactory} from "./Folders/IFolderFactory";
+import {IJobFactory} from "./Tasks/IJobFactory";
+import {IMessagingFactory} from "./InstantMessaging/IMessagingFactory";
 /**
  * Объект IApplication предназначен для доступа к объектам системы DIRECTUM.
  */
@@ -40,14 +42,23 @@ export interface IApplication {
     /**
      * Свойство предоставляет доступ к фабрике папок.
      */
-    readonly FolderFactory: IFolderFactory
-    JobFactory
+    readonly FolderFactory: IFolderFactory;
+    /**
+     * Свойство предоставляет доступ к фабрике заданий.
+     */
+    readonly JobFactory: IJobFactory;
     /**
      * Свойство предоставляет интерфейс с информацией о лицензиях.
      */
-    LicenseInfo: ILicenseInfo;
-    Localization: ILocalization;
-    MessagingFactory
+    readonly LicenseInfo: ILicenseInfo;
+    /**
+     * Свойство предоставляет доступ к объекту-локализации, который содержит настройки локализации текущего сеанса работы.
+     */
+    readonly Localization: ILocalization;
+    /**
+     * Свойство предоставляет доступ к фабрике мгновенных сообщений при наличии лицензии Microsoft Lync Server.
+     */
+    readonly MessagingFactory: IMessagingFactory;
     /**
      * Свойство устанавливает контекст организации.
      */
