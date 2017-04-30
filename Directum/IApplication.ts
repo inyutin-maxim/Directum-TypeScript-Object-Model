@@ -8,6 +8,7 @@ import {IDICSFactory} from "./DICS/IDICSFactory";
 import {IDialogsFactory} from "./Dialogs/IDialogsFactory";
 import {IComponentTokenFactory} from "./ComponentToken/IComponentTokenFactory";
 import {IEDocumentFactory} from "./Documents/IEDocumentFactory";
+import {IFolderFactory} from "./Folders/IFolderFactory";
 /**
  * Объект IApplication предназначен для доступа к объектам системы DIRECTUM.
  */
@@ -36,7 +37,10 @@ export interface IApplication {
      * Свойство предоставляет доступ к фабрике документов.
      */
     readonly EDocumentFactory: IEDocumentFactory;
-    FolderFactory
+    /**
+     * Свойство предоставляет доступ к фабрике папок.
+     */
+    readonly FolderFactory: IFolderFactory
     JobFactory
     /**
      * Свойство предоставляет интерфейс с информацией о лицензиях.
