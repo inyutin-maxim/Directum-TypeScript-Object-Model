@@ -12,6 +12,7 @@ import {IFolderFactory} from "./Folders/IFolderFactory";
 import {IJobFactory} from "./Tasks/IJobFactory";
 import {IMessagingFactory} from "./InstantMessaging/IMessagingFactory";
 import {IReportFactory} from "./Reports/IReportFactory";
+import {ISearchFactory} from "./Searches/ISearchFactory";
 /**
  * Объект IApplication предназначен для доступа к объектам системы DIRECTUM.
  */
@@ -75,17 +76,20 @@ export interface IApplication {
     /**
      * Свойство предоставляет доступ к ИД процесса COM-сервера.
      */
-    PID: number;
+    readonly PID: number;
     /**
      * Свойство предоставляет доступ к фабрике сценариев.
      */
-    ScriptFactory: IScriptFactory;
-    SearchFactory
-    ServiceFactory
-    SystemDialogsFactory
-    TaskFactory
+    readonly ScriptFactory: IScriptFactory;
+    /**
+     * Объект ISearchFactory предназначен для работы с поисками.
+     */
+    readonly SearchFactory: ISearchFactory;
+    readonly ServiceFactory
+    readonly SystemDialogsFactory
+    readonly TaskFactory
     /**
      * Свойство предоставляет доступ к фабрике мастеров действий.
      */
-    WizardFactory: IWizardFactory;
+    readonly WizardFactory: IWizardFactory;
 }
